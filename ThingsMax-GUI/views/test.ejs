@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Activate Mapped IOT Devices For A Maximo Asset </title>
+    <!-- link rel='stylesheet' href='/stylesheets/style.css'/ -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Activate Mapped IOT Devices For A Maximo Asset </h1>
+    <div class="container">
+        <h2>IOT Activation for Asset:</h2> 
+        <form class="form-horizontal">
+            <div class="form-group">
+            	<label for="key">Key:</label>
+	    	    <input id="key" class="form-control" type='text' name='key' placeholder="Input key" value = '<%=key%>'>							
+			</div>	    	
+			<div class="form-group">
+	    		<label for="value">Asset Org: </label>
+	    		<input id='value' class="form-control" type="text" name='value' value = '<%=JSON.stringify(value.assetorg)%>'/>
+				
+	    	</div>
+			<div class="form-group">
+	    		<label for="value">Asset Type: </label>
+	    		<input id='value' class="form-control" type="text" name='value' value = '<%=JSON.stringify(value.assettype)%>'/>
+				
+	    	</div>
+			<div class="form-group">
+	    		<label for="value">Device Org: </label>
+	    		<input id='value' class="form-control" type="text" name='value' value = '<%=JSON.stringify(value.devices[0].dorg)%>'/>
+				
+	    	</div>			
+			<div class="form-group" id="restdiv">
+	    		<label for="restdata">Data: </label>
+	    		<input id='restdata' class="form-control" type="text" name='restdata' value = '<%=data%>'/>
+				
+	    	</div>
+		</form>
+	</div>
+    <script type="text/javascript" src="/js/index.js"></script>
+  </body>
+</html>

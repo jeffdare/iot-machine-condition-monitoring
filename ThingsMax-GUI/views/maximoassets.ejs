@@ -1,0 +1,33 @@
+<label> Select Organization : </label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			<ui-select ng-model="maximoOrg.selected"  ng-click="changeOnMaximoOrgSelected(maximoOrg.selected.id)" theme="select2" ng-disabled="disabled" style="min-width: 500px;">
+				<ui-select-match placeholder="Select an org by id or by name">
+					{{$select.selected.id}}
+				</ui-select-match>
+				<ui-select-choices repeat="maximoOrg in maximoOrganizations | propsFilter: {id: $select.search, description: $select.search}">
+					<div ng-bind-html="maximoOrg.id | highlight: $select.search"></div>
+					<small ng-hide="maximoOrg.id.length==0">
+						name: {{maximoOrg.description}}
+					</small>
+				</ui-select-choices>
+			</ui-select>  
+			<hr/>
+
+<div ng-hide="!maximoOrg.selected">
+ 
+ <label> Select Asset : </label>&nbsp;&nbsp;&nbsp;&nbsp; 
+			<ui-select ng-model="assetdevice.selected"  ng-click="changeTabMaximoDevices(assetdevice.selected)" theme="select2" ng-disabled="disabled" style="min-width: 500px;">
+				<ui-select-match placeholder="Select a asset in the list or search its id/type">
+					{{$select.selected._id}}
+				</ui-select-match>
+				<ui-select-choices repeat="assetdevice in maximoassets | propsFilter: {_id: $select.search, assettype: $select.search}">
+					<div ng-bind-html="assetdevice._id | highlight: $select.search"></div>
+					<small ng-hide="assetdevice._id.length==0">
+						siteid: {{assetdevice.siteid}}
+						assettype: <span ng-bind-html="''+assetdevice.assettype | highlight: $select.search"></span>
+					</small>
+				</ui-select-choices>
+			</ui-select>  
+			<hr/>
+			<%- include  mappeddevices.ejs %>
+			
+</div>			

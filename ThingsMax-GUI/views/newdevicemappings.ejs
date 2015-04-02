@@ -1,0 +1,107 @@
+<div ng-hide="assetdevice.selected">
+<h4 class="text-danger">Please first go to the Maximo Assets pane and select an Asset</h4>
+</div>
+
+<div ng-hide="!assetdevice.selected">
+<div>
+<h4>Add new device mappings</h4>
+<h4><small> For Maximo Organization: [<strong>{{maximoOrg.selected.description}} </strong>]</small> &nbsp;
+ <small> and Asset [<strong>{{assetdevice.selected._id}} of type {{assetdevice.selected.assettype}} </strong>]</small></h4>
+</div>
+<hr/>
+<div>
+<h4 class="text-info">Select device from dropdown</h4>
+<label> Select Device : </label>&nbsp;&nbsp; 
+			<ui-select ng-model="device.selected" ng-click="onDeviceSelection(assetdevice.selected, device.selected)" theme="select2" ng-disabled="disabled" style="min-width: 500px;">
+				<ui-select-match placeholder="Select a device in the list or search its id/type">
+					{{$select.selected.id}}
+				</ui-select-match>
+				<ui-select-choices repeat="device in devices | propsFilter: {id: $select.search, uuid: $select.search}">
+					<div ng-bind-html="device.id | highlight: $select.search"></div>
+					<small>
+						uuid: {{device.uuid}}
+						type: <span ng-bind-html="''+device.type | highlight: $select.search"></span>
+					</small>
+				</ui-select-choices>
+			</ui-select>  
+<div>
+<div ng-hide="!(newAssetMapping.devices.length !=0)" class="col-sm-12">    
+<br/>
+<h4> Added Devices </h4>
+
+<div id="addedDevices" class="accordion">
+      <div id="addedDevice{{deviceMapping.deviceId}}" class="accordion-group" ng-repeat="deviceMapping in newAssetMapping.devices track by $index" >
+        <div class="accordion-heading">
+          <a href="#{{deviceMapping.deviceId}}" onclick="closeOthers()" data-parent="#addedDevices" data-toggle="collapse" class="accordion-toggle">
+          {{$index}}. Configure rules for Device Id : {{ deviceMapping.deviceId }},  Device Type : {{ deviceMapping.deviceType }}
+        </a>
+        </div>
+        <div style="height: auto; " class="accordion-body in collapse" id="{{deviceMapping.deviceId}}">
+          <div class="accordion-inner">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Rule Name</th>
+						<th>Rule URL</th>	
+					</tr>
+				</thead>
+				<tbody>
+					<tr>	 
+						<td>
+							<div class="form-group">
+								<input type="text" ng-model="newDeviceRule.ruleName" placeholder="Rule Name"/>												 
+							</div>
+						</td>
+						<td>
+							<div class="form-group">
+								<input type="text" ng-model="newDeviceRule.ruleurl" placeholder="Rule URL"/>
+							</div>
+						</td>
+						<td>
+							<button id='btnAddDeviceRule' class='btn btn-primary btn-sm' ng-click="addDeviceRule(deviceMapping, newDeviceRule)">
+								<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;Add Rule
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>		  
+		    <table class="table table-striped table-hover">	
+			   <caption>Added Rules</caption>	
+			   <thead>
+				<tr>
+						<th>Rule Name</th>
+						<th>Rule URL</th>	
+				</tr>      
+			  </thead>
+			  <body>
+				 <tr ng-repeat="rule in deviceMapping.rules track by $index">
+				   <td>
+					 {{ rule.ruleName }}
+				  </td>
+				  <td>
+					 {{ rule.ruleurl }}
+				  </td>		  
+				</tr>
+			  </body>
+			</table>
+          </div>
+        </div>
+      </div>
+</div>
+
+</div>
+<br/>
+<br/>
+<div ng-hide="!(newAssetMapping.devices.length > 0 && newAssetMapping.devices[0].rules.length)"  class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+        <button class="btn btn-primary "  id='btnNewDeviceMapping' 
+		        ng-click="createNewAssetMapping()">
+			<span class="glyphicon ">Create Device Mappings</span>
+		</button>
+    </div>
+    <div class="col-sm-6"></div>	
+</div>	
+</div>	
+</div>
+</div>

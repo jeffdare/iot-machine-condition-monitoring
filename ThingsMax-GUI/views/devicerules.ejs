@@ -1,0 +1,34 @@
+<h3>All Triggered Rule Actions History</h3>
+<!-- <div ng-model='triggeredactions'>{{triggeredactions}} </div> -->
+<div class="col-sm-12">
+	<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Asset ID</th>	
+			<th>Asset Type</th>				
+			<th>Device ID</th>    
+			<th>Device Type</th>		
+			<th>Rule Name</th>		
+			<th>Temperature</th>	
+			<th>Humidity</th>	
+			<th>Action Message</th>	
+			<th>Date Time</th>	
+			<th>Decision ID</th>	
+		</tr>
+	</thead>
+	<tbody >  
+		<tr ng-repeat="triggeredaction in triggeredactions track by $index"">		
+			<td ng-model="triggeredaction._id">{{triggeredaction.assetID}}</td>	
+			<td ng-model="triggeredaction.assettype">{{triggeredaction.assetType}}</td>		    		
+			<td ng-model="triggeredaction.deviceId">{{triggeredaction.deviceID}}</td>
+			<td ng-model="triggeredaction.deviceType">{{triggeredaction.deviceType}}</td>					
+			<td ng-model="triggeredaction.rulename">{{triggeredaction.rulename}}</td>
+			<td ng-model="triggeredaction.temp">{{triggeredaction.temp}}</td>
+			<td ng-model="triggeredaction.humidity">{{triggeredaction.humidity}}</td>					
+			<td ng-model="triggeredaction.message">{{triggeredaction.message}}</td>
+			<td ng-model="triggeredaction.dateTime">{{triggeredaction.dateTime}}</td>					
+			<td ng-model="triggeredaction.decisionID">{{triggeredaction.decisionID}}</td>					
+		</tr>  
+	</tbody>
+	</table>	
+</div>

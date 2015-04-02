@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="iotAssetManagerApp">
+  <head>
+    <title>Activate Mapped IOT Devices For A Maximo Asset </title>    
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>	
+	<script src='http://code.jquery.com/jquery-1.9.1.js'></script>	
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>	
+	<!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script -->
+    <!--script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script -->    
+	<script src='http://code.angularjs.org/1.2.0-rc.2/angular-route.min.js'></script>	
+		
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+
+	
+	<script src='/javascripts/iotAssetManager-client.js'></script> 
+    <script type="text/javascript">		 
+		var closeOthers = function () {
+				$(".collapse").collapse('hide');				
+		}
+		var closeAll = function () {				
+				var accordion_list = $(".collapse");
+				accordion_list.collapse('hide');
+				accordion_list.first().addClass("in");
+		}
+</script>  	
+	<!-- ui-select files -->
+  <script src="/javascripts/select.js"></script>
+  <link rel="stylesheet" href="/stylesheets/select.css">
+  <!-- Select2 theme -->
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+  <!--
+    Selectize theme   
+  -->
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap3.css"> 
+  <style>
+    body {
+	  margin: 0px;
+      padding: 15px;
+    }
+    .select2 > .select2-choice.ui-select-match {
+      /* Because of the inclusion of Bootstrap */
+      height: 29px;
+    }
+    .selectize-control > .selectize-dropdown {
+      top: 36px;
+    }
+	
+	.page_header {
+		  margin-bottom: 20px !important;
+		  height: 50px !important;			  
+		  text-align: center;
+		}
+  </style>	
+  </head>
+<body>
+<div class="page_header">
+<h3> ThingsMax Demo </h3>						
+</div>
+<div class="container-fluid" ng-controller="iotAssetManagerController" >   
+		<div ng-style="{'background-color':'Ivory'}"class="col-sm-3" >
+			<ul class="nav nav-tabs nav-stacked nav-pills" role="tablist">
+				<li ng-class="{'active': view_tab == 'maximoassets'}">
+					<a class="btn-lg" ng-click="changeTab('maximoassets')" href="">Enterprise Assets</a>
+				</li>        
+				<li ng-class="{'active': view_tab == 'mappeddevices'}">
+					<a class="btn-lg" ng-click="changeTab('mappeddevices')" href="">Asset-Device Map</a>
+				</li>
+				<li ng-class="{'active': view_tab == 'newdevicemappings'}">
+					<a class="btn-lg" ng-click="changeTab('newdevicemappings')" href="">New Device Mapping</a>
+				</li>
+				<li ng-class="{'active': view_tab == 'triggeredruleactions'}">
+					<a class="btn-lg" ng-click="changeTab('triggeredruleactions')" href="">Triggered Rule Actions</a>
+				</li>		
+			</ul>
+		</div>
+		<div class="col-sm-9">
+			<div class="tab-content">
+				<div  id="pane1" class="tab-pane" ng-class="{'active': view_tab == 'maximoassets'}" ng-show="view_tab == 'maximoassets'">
+					<%- include  maximoassets.ejs %>
+				</div>
+				<div id="pane2" class="tab-pane"  ng-class="{'active': view_tab == 'mappeddevices'}" 
+								ng-show="view_tab == 'mappeddevices'">
+					<%- include  mappeddevices.ejs %>
+				</div>
+				<div id="pane3" class="tab-pane"  ng-class="{'active': view_tab == 'newdevicemappings'}" ng-show="view_tab == 'newdevicemappings'">
+					<%- include  newdevicemappings.ejs %>
+				</div>
+				<div id="pane4" class="tab-pane"  ng-class="{'active': view_tab == 'triggeredruleactions'}" ng-show="view_tab == 'triggeredruleactions'">
+					<%- include  triggeredruleactions.ejs %>
+				</div>		
+			</div>
+		</div>
+</body>
+</html>

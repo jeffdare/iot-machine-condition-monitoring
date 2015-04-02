@@ -1,0 +1,19 @@
+<h3>All Triggered Rule Actions History</h3>
+<div class="col-sm-12">
+	<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>Device ID</th>    			
+			<th>Action Message</th>	
+			<th>Work Order</th>	
+		</tr>
+	</thead>
+	<tbody >  
+		<tr ng-repeat="triggeredaction in triggeredactions track by $index"">		
+			<td ng-model="triggeredaction.deviceId">{{triggeredaction.deviceID}}</td>			
+			<td ng-model="triggeredaction.message">{{triggeredaction.message}}</td>			
+			<td ng-model="triggeredaction.decisionID">{{triggeredaction.decisionID}}</td>					
+		</tr>  
+	</tbody>
+	</table>	
+</div>

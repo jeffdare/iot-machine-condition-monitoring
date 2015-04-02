@@ -1,0 +1,13 @@
+---
+applications:
+- services: {
+    }
+  disk_quota: 1024M
+  host: libThingsmax
+  name: libThingsmax
+  path: thingsmax-web.war
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
+  env: {
+    }

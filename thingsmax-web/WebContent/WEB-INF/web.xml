@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>iotfwebappclient</display-name>
+	<welcome-file-list>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>test.jsp</welcome-file>
+	</welcome-file-list>
+	<context-param>
+		<param-name>apiAuthKey</param-name>
+		<param-value>a-uguhsp-ywwgvqzatf</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>apiAuthToken</param-name>
+		<param-value>LRWbgadqiPV0x2PbKX</param-value>
+	</context-param>	
+
+	<context-param>
+		<param-name>deviceType</param-name>
+		<param-value>iotsample-arduino</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>deviceId</param-name>
+		<param-value>00aabbccde03</param-value>
+	</context-param>	
+
+	<context-param>
+		<param-name>eventType</param-name>
+		<param-value>status</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>formatType</param-name>
+		<param-value>json</param-value>
+	</context-param>	
+
+	<welcome-file-list>
+		<welcome-file>default.html</welcome-file>
+	</welcome-file-list>
+
+
+	<listener>
+		<display-name>IoTServletContext</display-name>
+		<listener-class>
+			com.ibm.thingsmax.engine.web.IoTFServletContextListener
+		</listener-class>
+	</listener>
+	
+	<servlet>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>javax.ws.rs.core.Application</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+</web-app>
