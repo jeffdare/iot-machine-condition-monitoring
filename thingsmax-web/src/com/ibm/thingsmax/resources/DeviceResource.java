@@ -1,6 +1,6 @@
 /**
  *****************************************************************************
- Copyright (c) 2014 IBM Corporation and other Contributors.
+ Copyright (c) 2015 IBM Corporation and other Contributors.
  All rights reserved. 
  Contributors:
  IBM - Initial Contribution
