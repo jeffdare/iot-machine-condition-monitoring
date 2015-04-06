@@ -1,8 +1,19 @@
+/**
+ *****************************************************************************
+ Copyright (c) 2015 IBM Corporation and other Contributors.
+ All rights reserved. 
+ Contributors:
+ IBM - Initial Contribution
+ *****************************************************************************
+ * 
+ */
+
 package com.ibm.thingsmax.resources;
 
 import java.net.URI;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -12,6 +23,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.core.Response.Status;
 
 import com.ibm.thingsmax.bean.Device;
 import com.ibm.thingsmax.bean.ThingsAction;
@@ -64,5 +76,15 @@ public class ThingsActionResource {
     	return null;
     }
     
-    
+    @DELETE
+    @Path( "/{actionId}")
+    public Response delete( @PathParam( "actionId" ) String id ) {
+    	try{
+    		ThingsMaxThingsActionDAO actionDAO = new ThingsMaxThingsActionDAO();
+    		actionDAO.delete(id);
+    	} catch (Exception e) {
+    		e.printStackTrace();
+    	}
+        return Response.status( Status.NO_CONTENT ).build();
+    }    
 }

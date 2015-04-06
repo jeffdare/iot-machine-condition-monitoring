@@ -1,3 +1,13 @@
+/**
+ *****************************************************************************
+ Copyright (c) 2015 IBM Corporation and other Contributors.
+ All rights reserved. 
+ Contributors:
+ IBM - Initial Contribution
+ *****************************************************************************
+ * 
+ */
+
 package com.ibm.thingsmax.engine.web;
 
 import java.io.BufferedReader;
@@ -30,6 +40,8 @@ public class ThingsMaxIoTFAgent {
 	private String eventType = "status";
 	private String formatType = "json";
 	protected ApplicationClient client = null;
+	
+	
 	
 	public ThingsMaxIoTFAgent(String id, String apiAuthKey, String apiAuthToken) {
 		options = new Properties();

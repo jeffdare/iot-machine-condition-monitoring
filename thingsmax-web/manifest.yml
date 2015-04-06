@@ -1,13 +1,14 @@
----
 applications:
-- services: {
-    }
+- services:
+  - Business Rules-zs
+  - Cloudant NoSQL DB-z0
+  - Internet of Things-99
   disk_quota: 1024M
-  host: libThingsmax
-  name: libThingsmax
+  host: thingsmax-web
+  name: thingsmax-web
   path: thingsmax-web.war
   domain: mybluemix.net
   instances: 1
-  memory: 512M
+  memory: 2048M
   env: {
     }

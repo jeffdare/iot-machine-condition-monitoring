@@ -1,6 +1,6 @@
 /**
  *****************************************************************************
- Copyright (c) 2014 IBM Corporation and other Contributors.
+ Copyright (c) 2015 IBM Corporation and other Contributors.
  All rights reserved. 
  Contributors:
  IBM - Initial Contribution
@@ -114,6 +114,7 @@ public class ThingsMaxDeviceDAO {
 
 		CouchDbInstance dbInstance = null;
 
+		System.out.println("Creating couch db instance...");
 		httpClient = new StdHttpClient.Builder().host(host).port(port)
 				.username(username).password(password).enableSSL(true)
 				.relaxedSSLSettings(true).build();

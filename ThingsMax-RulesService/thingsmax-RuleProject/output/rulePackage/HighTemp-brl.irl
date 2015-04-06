@@ -1,0 +1,16 @@
+package rulePackage {
+   rule HighTemp {
+      property ilog.rules.business_name = "HighTemp";
+      property ilog.rules.package_name = "rulePackage";
+      property status = "new";
+      when {
+         com.ibm.xom.model.Device() from device;
+         evaluate (device.temp > 250);
+      } then {
+         device.message = (("The temperature is beyond acceptable range of 250 " + " for device of: ") + device.myName);
+         rules.ruleName = "HighTemp";
+         rules.ruleExecutionTimeStamp = rules.ruleExecutionTimeStamp;
+      }
+   }
+}
+

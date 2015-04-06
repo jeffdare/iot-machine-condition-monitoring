@@ -9,12 +9,12 @@
 	</welcome-file-list>
 	<context-param>
 		<param-name>apiAuthKey</param-name>
-		<param-value>a-uguhsp-ywwgvqzatf</param-value>
+		<param-value>some_authkey</param-value>
 	</context-param>
 
 	<context-param>
 		<param-name>apiAuthToken</param-name>
-		<param-value>LRWbgadqiPV0x2PbKX</param-value>
+		<param-value>some_authtoken</param-value>
 	</context-param>	
 
 	<context-param>
