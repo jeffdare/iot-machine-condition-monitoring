@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>HighTemp</name>
+  <uuid>d842baea-483c-44b1-94a4-77052f879759</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 
+	the temp of device is more than 250
+	
+then  
+	set the message of device to "The temperature is beyond acceptable range of 250 "
+	 + " for device of: " +  the my name of device ;
+	 set the rule name of rules to "HighTemp" ;
+	 set  the rule execution time stamp of rules to the rule execution time stamp of rules; 
+	 
+	 
+	
+ 	]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

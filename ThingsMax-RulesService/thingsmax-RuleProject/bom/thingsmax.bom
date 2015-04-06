@@ -1,0 +1,45 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/thingsmax-RuleProject//thingsmax"
+property uuid "5002b807-33ba-47e7-9cf0-70dc1e483bf7"
+package com.ibm.xom.model;
+
+
+public class Asset
+{
+    public string assetID;
+    public string assetType;
+    public Asset(string arg1, string arg2);
+    public Asset();
+}
+
+public class Device
+{
+    public string deviceID;
+    public string deviceType;
+    public int humidity;
+    public string message;
+    public string myName;
+    public int pressure;
+    public int rpm;
+    public int temp;
+    public int voltage;
+    public Device(string arg1, string arg2, string arg3, int arg4, int arg5, int arg6, int arg7, int arg8, string arg9);
+    public Device();
+}
+
+public class Org
+{
+    public string orgID;
+    public Org(string arg);
+    public Org();
+}
+
+public class Rules
+{
+    public string ruleExecutionTimeStamp;
+    public string ruleName;
+    public string ruleURL;
+    public Rules();
+}
+

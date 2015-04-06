@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project-deployment xmlns="http://www.ibm.com/rules/ruleproject/deployment" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <config serverURL="https://brsv2-85f4a9e4.stage1.ng.bluemix.net/res">
+        <xom>
+            <uri value="resuri://thingsmax.zip/10.0"/>
+        </xom>
+    </config>
+<config serverURL="https://brsv2-6738c780.ng.bluemix.net/res">
+        <xom>
+            <uri value="resuri://thingsmax.zip/1.0"/>
+        </xom>
+    </config>
+<config serverURL="https://brsv2-0caf869d.ng.bluemix.net/res">
+        <xom>
+            <uri value="resuri://thingsmax.zip/1.0"/>
+        </xom>
+    </config>
+<config serverURL="https://brsv2-8beb564c.ng.bluemix.net/res">
+        <xom>
+            <uri value="resuri://thingsmax.zip/1.0"/>
+        </xom>
+    </config>
+</project-deployment>

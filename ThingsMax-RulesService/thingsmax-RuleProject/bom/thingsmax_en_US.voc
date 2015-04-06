@@ -1,0 +1,44 @@
+# Vocabulary Properties
+uuid = cab6f765-b3f5-40f9-9116-4710790fd419
+
+# com.ibm.xom.model.Asset
+com.ibm.xom.model.Asset#concept.label = asset
+com.ibm.xom.model.Asset.assetID#phrase.action = set the asset ID of {this} to {asset ID}
+com.ibm.xom.model.Asset.assetID#phrase.navigation = {asset ID} of {this}
+com.ibm.xom.model.Asset.assetType#phrase.action = set the asset type of {this} to {asset type}
+com.ibm.xom.model.Asset.assetType#phrase.navigation = {asset type} of {this}
+
+# com.ibm.xom.model.Device
+com.ibm.xom.model.Device#concept.label = device
+com.ibm.xom.model.Device.deviceID#phrase.action = set the device ID of {this} to {device ID}
+com.ibm.xom.model.Device.deviceID#phrase.navigation = {device ID} of {this}
+com.ibm.xom.model.Device.deviceType#phrase.action = set the device type of {this} to {device type}
+com.ibm.xom.model.Device.deviceType#phrase.navigation = {device type} of {this}
+com.ibm.xom.model.Device.humidity#phrase.action = set the humidity of {this} to {humidity}
+com.ibm.xom.model.Device.humidity#phrase.navigation = {humidity} of {this}
+com.ibm.xom.model.Device.message#phrase.action = set the message of {this} to {message}
+com.ibm.xom.model.Device.message#phrase.navigation = {message} of {this}
+com.ibm.xom.model.Device.myName#phrase.action = set the my name of {this} to {my name}
+com.ibm.xom.model.Device.myName#phrase.navigation = {my name} of {this}
+com.ibm.xom.model.Device.pressure#phrase.action = set the pressure of {this} to {pressure}
+com.ibm.xom.model.Device.pressure#phrase.navigation = {pressure} of {this}
+com.ibm.xom.model.Device.rpm#phrase.action = set the rpm of {this} to {rpm}
+com.ibm.xom.model.Device.rpm#phrase.navigation = {rpm} of {this}
+com.ibm.xom.model.Device.temp#phrase.action = set the temp of {this} to {temp}
+com.ibm.xom.model.Device.temp#phrase.navigation = {temp} of {this}
+com.ibm.xom.model.Device.voltage#phrase.action = set the voltage of {this} to {voltage}
+com.ibm.xom.model.Device.voltage#phrase.navigation = {voltage} of {this}
+
+# com.ibm.xom.model.Org
+com.ibm.xom.model.Org#concept.label = org
+com.ibm.xom.model.Org.orgID#phrase.action = set the org ID of {this} to {org ID}
+com.ibm.xom.model.Org.orgID#phrase.navigation = {org ID} of {this}
+
+# com.ibm.xom.model.Rules
+com.ibm.xom.model.Rules#concept.label = rules
+com.ibm.xom.model.Rules.ruleExecutionTimeStamp#phrase.action = set the rule execution time stamp of {this} to {rule execution time stamp}
+com.ibm.xom.model.Rules.ruleExecutionTimeStamp#phrase.navigation = {rule execution time stamp} of {this}
+com.ibm.xom.model.Rules.ruleName#phrase.action = set the rule name of {this} to {rule name}
+com.ibm.xom.model.Rules.ruleName#phrase.navigation = {rule name} of {this}
+com.ibm.xom.model.Rules.ruleURL#phrase.action = set the rule URL of {this} to {rule URL}
+com.ibm.xom.model.Rules.ruleURL#phrase.navigation = {rule URL} of {this}

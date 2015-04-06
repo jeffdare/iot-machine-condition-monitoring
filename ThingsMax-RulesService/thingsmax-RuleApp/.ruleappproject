@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RuleApp>
+   <ruleset>
+      <kind>ruleproject</kind>
+      <display-name>thingsmax-RuleProject</display-name>
+      <name>thingsmaxRuleProject</name>
+      <version>1.0</version>
+      <fullpath>runtime/thingsmaxRuleProject10.jar</fullpath>
+      <location>thingsmax-RuleProject</location>
+      <export>true</export>
+   </ruleset>
+</RuleApp>
+
